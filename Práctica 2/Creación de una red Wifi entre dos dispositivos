@@ -4,9 +4,10 @@ import network
 import time
 SSID = "Cisne Chaca"  
 PASSWORD = "cisnemaria"
-ap = network.WLAN(network.AP IF) 
-ap.active (True)  
-ap.config (essid=SSID, password=PASSWORD) 
+ap = network.WLAN(network.AP_IF) 
+ap.active(True)  
+ap.config(essid=SSID, password=PASSWORD,
+authmode = network.AUTH_WPA_WPA2_PSK)
 ip_address = ap.ifconfig()[0] 
-print ("ESP32 configurado como Access Point") 
-print ("Dirección IP del Access Point:" ip_address)
+print("ESP32 configurado como Access Point") 
+print("Dirección IP del Access Point:" ip_address)
