@@ -1,0 +1,22 @@
+import dht 
+import machine
+import network 
+import time 
+
+SSID = "CISNE MAJO"  
+PASSWORD = "12345678"  
+ap = network.WLAN(network.AP_IF) 
+ap.active(True) 
+ap.config(essid=SSID, password= PASSWORD, 
+authomode = network.AUTH_WPA_WPA2_PSK)
+ip_address = ap.ifconfig()[0] 
+print("ESP32 configurado como Access Point") 
+print("Dirección IP del Access Point:" ip_address)
+dht_sensor = dht. DHT11(machine.Pin(14))
+while True: 
+    try:
+        dht_sensor.measure() 
+        temperature = dht_sensor.temperature() 
+        humidity = dht_sensor.humidity() 
+        print("Temperatura: {}°C, Humedad: {}%”.format(temperature,humidity)) 
+        time.sleep(2)
