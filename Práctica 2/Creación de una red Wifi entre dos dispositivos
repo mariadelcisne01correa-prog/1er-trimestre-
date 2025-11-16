@@ -2,9 +2,11 @@ import dht
 import machine 
 import network 
 import time
-SSID = "Cisne Chaca"  PASSWORD = "cisnemaria"
+SSID = "Cisne Chaca"  
+PASSWORD = "cisnemaria"
 ap = network.WLAN(network.AP IF) 
-ap.active (True)  ap.config (essid=SSID, password=PASSWORD) 
+ap.active (True)  
+ap.config (essid=SSID, password=PASSWORD) 
 ip_address = ap.ifconfig()[0] 
 print ("ESP32 configurado como Access Point") 
- print ("Dirección IP del Access Point:" ip_address)
+print ("Dirección IP del Access Point:" ip_address)
